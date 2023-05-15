@@ -1,9 +1,3 @@
-import "../src/main.css"
-import '@fortawesome/fontawesome-free/js/fontawesome'
-import '@fortawesome/fontawesome-free/js/solid'
-import '@fortawesome/fontawesome-free/js/regular'
-import '@fortawesome/fontawesome-free/js/brands'
-
 const apiKey = "f923dab56802811e05570d441579986d";
 const apiURL = "https://api.openweathermap.org/data/2.5/weather?&lang=fr&units=metric&q=";
 const searchBox  = document.querySelector(".search input");
