@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body {
+    background: lightblue;
+}
+h1{
+    font-family: 'Oswald', sans-serif;
+    line-height: 1;
+}
+.card{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    margin: auto;
+    border-radius: 40PX;
+    width: 250px;
+    height: 500px;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.69);
+}
+.search{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0;
+    height: 50px;
+
+}
+.search input {
+    width: 70%;
+    padding: 0 0 0 15px;
+    font-size: 17px;
+    border-radius: 25px;
+
+}
+.search button {
+    width: 20%;
+    border-radius: 50%;
+    text-align: center;
+    background-color: white;
+    color: gray;
+    font-size: 17px;
+}
+
+.search button, .search input{
+    border: none;
+    color: gray;
+
+}
+
+#weatherIcon{
+    display: inherit;
+    text-align: center;
+    font-size: 140px;
+}
+.weather div{
+    margin: 10px 0;
+}
+.weather div span{
+    font-size: 1.5em;
+}
+
+.moreInfos{
+    display: none;
+}
+.moreInfos div{
+    display: grid;
+    grid-template-areas: 
+    'icon value'
+    'info info';
+    width: 50%;
+}
+.moreInfos div span svg{
+    font-size:40px
+}
+.moreInfos div span:nth-child(1){
+    grid-area: icon;
+}
+.moreInfos div span:nth-child(2){
+    grid-area: value;
+    font-size: 30px;
+    margin-top: 3px
+}
+.moreInfos div span:nth-child(3){
+    grid-area: info;
+    font-size: 20px;
+
+}
+
+.icon {
+    margin: auto 0;
+}
