@@ -28,7 +28,7 @@ async function checkWeather(location){
         //modifie l'icône météo selon les données
        if(data.weather[0].main === "Clouds"){
             document.querySelector("#weatherIcon").innerHTML = `<i class="fa-solid fa-cloud"></i>`
-        }
+        } 
         if(data.weather[0].main === "Clear"){
             document.querySelector("#weatherIcon").innerHTML = `<i class="fa-solid fa-sun"></i>`
         }
