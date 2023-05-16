@@ -3,31 +3,39 @@ const apiURL = "https://api.openweathermap.org/data/2.5/weather?&lang=fr&units=m
 const searchBox  = document.querySelector(".search input");
 const searchBtn  = document.querySelector(".search button")
 
-
+//fonction app météo
 async function checkWeather(location){
+    
+    //requête vers API
     const response = await fetch(apiURL + location + `&appid=${apiKey}`);
 
     if(response.status === 404 || response.status === 400){
+        //ajoute un message d'erreur en lieu et place de l'absence de météo
         document.querySelector('#location').innerHTML = "Invalid Location"
         
+        //masque les blocs HTML en cas d'absence de météo
         document.querySelector("#weatherIcon").style.display = "none"
         document.querySelector(".moreInfos").style.display = "none"
         document.querySelector("#temp").style.display = "none"
 
 
     } else {
-        var data = await response.json();        
+        //stocke les données dans "var" si la requête est réussie
+        var data = await response.json();
+        
+        //affiche les blocs HTML qui vont contenir les infos météo lors de la réponse 200 de la requête 
         document.querySelector(".moreInfos").style.display = "flex"
         document.querySelector("#temp").style.display = "inline"
         document.querySelector("#weatherIcon").style.display = "inherit"
 
+         //modifie le HTML selon les données reçue via API
         document.querySelector("#location").innerHTML = data.name
         document.querySelector("#temp").innerHTML = Math.round(data.main.temp)  + ' °c'
         document.querySelector("#humidty").innerHTML = data.main.humidity
         document.querySelector("#wind").innerHTML = data.wind.speed
 
 
-        //modifie l'icône météo selon les données
+        //modifie l'icône météo selon les données reçues via API
        if(data.weather[0].main === "Clouds"){
             document.querySelector("#weatherIcon").innerHTML = `<i class="fa-solid fa-cloud"></i>`
         } 
@@ -70,7 +78,8 @@ async function checkWeather(location){
     }
 }
 
-    //recherche la météo au click sur la loupe ou en pressant "Entrer"
+    //écoute user input et lance la fonction pour récupérer les données météo et les afficher
+    //au click sur la loupe ou en pressant la touche "Entrée"
 window.onload = searchBtn.addEventListener("click",()=>{
     checkWeather(searchBox.value)
 })
