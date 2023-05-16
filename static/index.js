@@ -19,7 +19,7 @@ async function checkWeather(location){
         var data = await response.json();        
         document.querySelector(".moreInfos").style.display = "flex"
         document.querySelector("#temp").style.display = "inline"
-        document.querySelector("#weatherIcon").style.display = "inline"
+        document.querySelector("#weatherIcon").style.display = "inherit"
 
         document.querySelector("#location").innerHTML = data.name
         document.querySelector("#temp").innerHTML = Math.round(data.main.temp)  + ' °c'
