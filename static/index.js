@@ -1,3 +1,7 @@
+/* Application météo : on écoute le click sur la loupe ou la touche "Entrée" pour récupérer les données utilisateurs
+via le champ input. Ces données sont utilisées pour former la requête API. On récupère la réponse et selon 
+le statut (400-404-200), on mets à jour le HTML */
+
 const apiKey = "f923dab56802811e05570d441579986d";
 const apiURL = "https://api.openweathermap.org/data/2.5/weather?&lang=fr&units=metric&q=";
 const searchBox  = document.querySelector(".search input");
