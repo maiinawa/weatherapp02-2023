@@ -37,7 +37,6 @@ async function checkWeather(location){
         document.querySelector("#temp").innerHTML = Math.round(data.main.temp)  + ' °c'
         document.querySelector("#humidty").innerHTML = data.main.humidity
         document.querySelector("#wind").innerHTML = data.wind.speed
-        console.log(data.weather[0].main)
 
         //modifie l'icône weather en fonction de la valeur dans la propriété main
         switch (data.weather[0].main){
