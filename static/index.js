@@ -37,47 +37,32 @@ async function checkWeather(location){
         document.querySelector("#temp").innerHTML = Math.round(data.main.temp)  + ' °c'
         document.querySelector("#humidty").innerHTML = data.main.humidity
         document.querySelector("#wind").innerHTML = data.wind.speed
+        console.log(data.weather[0].main)
 
-
-        //modifie l'icône météo selon les données reçues via API
-       if(data.weather[0].main === "Clouds"){
-            document.querySelector("#weatherIcon").innerHTML = `<i class="fa-solid fa-cloud"></i>`
-        } 
-        if(data.weather[0].main === "Clear"){
-            document.querySelector("#weatherIcon").innerHTML = `<i class="fa-solid fa-sun"></i>`
-        }
-        if(data.weather[0].main === "Snow"){
-            document.querySelector("#weatherIcon").innerHTML = `<i class="fa-regular fa-snowflake"></i>`
-        }
-        if(data.weather[0].main === "Mist"){
-            document.querySelector("#weatherIcon").innerHTML = `<i class="fa-solid fa-smog"></i>`
-        }
-        if(data.weather[0].main === "Rain"){
-            document.querySelector("#weatherIcon").innerHTML = `<i class="fa-solid fa-cloud-rain"></i>`
-        }
-        if(data.weather[0].main === "Drizzle"){
-            document.querySelector("#weatherIcon").innerHTML = `<i class="fa-solid fa-cloud-sun-rain"></i>`
-        }
-        if(data.weather[0].main === "Thunderstorm"){
-            document.querySelector("#weatherIcon").innerHTML = `<i class="fa-solid fa-cloud-bolt"></i>`
-        }
-        
-        /*switch (data.weather[0].main){
+        //modifie l'icône weather en fonction de la valeur dans la propriété main
+        switch (data.weather[0].main){
             case "Clouds":
             document.querySelector("#weatherIcon").innerHTML = `<i class="fa-solid fa-cloud"></i>`
+            break;
             case "Clear":
             document.querySelector("#weatherIcon").innerHTML = `<i class="fa-solid fa-sun"></i>`
+            break;
             case "Snow":
-            document.querySelector("#weatherIcon").innerHTML = `<i class="fa-regular fa-snowflake"></i>`            
+            document.querySelector("#weatherIcon").innerHTML = `<i class="fa-regular fa-snowflake"></i>`  
+            break;          
             case "Mist":
             document.querySelector("#weatherIcon").innerHTML = `<i class="fa-solid fa-smog"></i>`
+            break;
             case "Rain":
             document.querySelector("#weatherIcon").innerHTML = `<i class="fa-solid fa-cloud-rain"></i>`
+            break;
             case "Drizzle":
             document.querySelector("#weatherIcon").innerHTML = `<i class="fa-solid fa-cloud-sun-rain"></i>`
+            break;
             case "Thunderstorm":
             document.querySelector("#weatherIcon").innerHTML = `<i class="fa-solid fa-cloud"></i>`
-        }*/
+            break;
+        } 
 
     }
 }
